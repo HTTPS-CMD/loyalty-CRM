@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id               String             @id @default(uuid())
+  email            String             @unique
+  password         String
+  firstName        String
+  lastName         String
+  role             Role               @default(USER)
+  pointsBalance    Int                @default(0)
+  walletBalance    Float              @default(0.0)
+  referralCode     String             @unique @default(uuid())
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+
+  membershipId     String?
+  membership       MembershipLevel?   @relation(fields: [membershipId], references: [id])
+  pointHistory     PointTransaction[]
+  orders           Order[]            // ارتباط با سفارشات
+  notifications    Notification[]
+}
+
+model MembershipLevel {
+  id              String   @id @default(uuid())
+  name            String   @unique 
+  pointThreshold  Int      
+  discountPercent Float    
+  users           User[]
+}
+
+model PointTransaction {
+  id          String   @id @default(uuid())
+  userId      String
+  amount      Int      
+  description String   
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+// ---------------- جداول جدید ----------------
+
+model Coupon {
+  id               String   @id @default(uuid())
+  code             String   @unique
+  discountPercent  Float
+  expirationDate   DateTime
+  usageLimit       Int      @default(1)
+  timesUsed        Int      @default(0)
+  isActive         Boolean  @default(true)
+}
+
+model Order {
+  id          String   @id @default(uuid())
+  userId      String
+  totalAmount Float
+  status      String   @default("COMPLETED")
+  createdAt   DateTime @default(now())
+  
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  
+  user      User     @relation(fields: [userId], references: [id])
+}
