@@ -1,69 +1,36 @@
-# 💎 Aratic Club - Loyalty & Rewards SaaS Platform
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-یک پلتفرم جامع و مدرن برای مدیریت باشگاه مشتریان (Customer Loyalty System)، طراحی شده با معماری Full-Stack برای ارائه سطح بالای خدمات به کاربران و مدیریت دقیق توسط مدیران کسب‌وکار.
+## Getting Started
 
-## 🚀 ویژگی‌های کلیدی (Features)
+First, run the development server:
 
-*   **احراز هویت امن (Authentication):** سیستم ثبت‌نام و ورود با استفاده از توکن‌های JWT و هشینگ رمز عبور با bcrypt.
-*   **کنترل دسترسی (RBAC):** تفکیک کامل پنل و دسترسی‌های کاربران عادی (Customer) و مدیران سیستم (Admin).
-*   **کیف پول دیجیتال (Digital Wallet):** امکان شارژ کیف پول و پرداخت مستقیم هزینه سفارشات از طریق موجودی.
-*   **سیستم گیمیفیکیشن و امتیازات:** تخصیص خودکار امتیاز با هر خرید و ارتقاء سطح کاربری (برنز، نقره‌ای، طلایی و پلاتینیوم).
-*   **سیستم کدهای تخفیف (Coupons):** تولید کدهای تخفیف با ظرفیت محدود و تاریخ انقضا توسط مدیر.
-*   **بازاریابی بازگشتی (Referral System):** کد معرف اختصاصی برای هر کاربر جهت دعوت از دوستان و دریافت پاداش دوطرفه.
-*   **کارت عضویت دیجیتال:** تولید خودکار بارکد اختصاصی (QR Code) برای هر مشتری جهت استفاده در شعب فیزیکی.
-*   **رابط کاربری پریمیوم (UI/UX):** طراحی کاملاً واکنش‌گرا (Responsive) با استایل Glassmorphism و انیمیشن‌های روان.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## 🛠️ تکنولوژی‌های استفاده شده (Tech Stack)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Frontend
-*   **Framework:** Next.js (App Router)
-*   **Styling:** Tailwind CSS
-*   **Animations:** Framer Motion
-*   **State & Fetching:** Axios, React Hooks
-*   **Icons & Components:** React-Icons, React-Hot-Toast, Recharts
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### Backend
-*   **Environment:** Node.js & Express.js
-*   **Database:** MySQL (Relational DB)
-*   **ORM:** Prisma
-*   **Security:** JWT, bcryptjs, Helmet, CORS
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 💻 راهنمای نصب و راه‌اندازی (Local Setup)
+## Learn More
 
-ابتدا کلون کردن مخزن (Repository):
-\`\`\`bash
-git clone <your-repository-url>
-cd loyalty-system
-\`\`\`
+To learn more about Next.js, take a look at the following resources:
 
-### ۱. راه‌اندازی بک‌اند (Backend)
-\`\`\`bash
-cd backend
-npm install
-\`\`\`
-*   یک فایل `.env` بسازید و مقادیر زیر را در آن قرار دهید:
-    \`\`\`env
-    DATABASE_URL="mysql://root:@localhost:3306/loyalty_db"
-    JWT_SECRET="Your_Secret_Key"
-    PORT=5001
-    \`\`\`
-*   اجرای مایگریشن دیتابیس و روشن کردن سرور:
-    \`\`\`bash
-    npx prisma db push
-    npm run dev (یا npx nodemon server.js)
-    \`\`\`
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### ۲. راه‌اندازی فرانت‌اند (Frontend)
-\`\`\`bash
-cd ../frontend
-npm install
-\`\`\`
-*   یک فایل `.env.local` بسازید و آدرس API را وارد کنید:
-    \`\`\`env
-    NEXT_PUBLIC_API_URL=http://localhost:5001/api/v1
-    \`\`\`
-*   اجرای پروژه فرانت‌اند:
-    \`\`\`bash
-    npm run dev
-    \`\`\`
-پروژه اکنون در آدرس `http://localhost:3000` در دسترس است.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
