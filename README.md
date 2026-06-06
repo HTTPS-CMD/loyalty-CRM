@@ -75,3 +75,38 @@ Golden-Club-CRM/
     ├── public/               # فایل‌های استاتیک (تصاویر، آیکون‌ها)
     ├── package.json          # وابستگی‌های فرانت‌اند
     └── tsconfig.json         # تنظیمات تایپ‌اسکریپت
+
+```
+
+```text
+
+# 1. ساخت محیط مجازی (Virtual Environment)
+python -m venv venv
+
+# 2. فعال‌سازی محیط مجازی
+# در ویندوز:
+venv\Scripts\activate
+# در مک/لینوکس:
+source venv/bin/activate
+
+# 3. نصب وابستگی‌ها
+pip install django djangorestframework django-cors-headers
+
+# 4. ساخت جداول دیتابیس
+python manage.py makemigrations
+python manage.py migrate
+
+# 5. ساخت اکانت ادمین (برای ورود به پنل)
+python manage.py createsuperuser
+
+# 6. اجرای سرور بک‌اند (روی پورت 8000)
+python manage.py runserver
+
+```
+
+```text
+# 1. نصب پکیج‌ها و وابستگی‌ها
+npm install
+# 2. اجرای سرور توسعه فرانت‌اند (روی پورت 3000)
+npm run dev
+```
