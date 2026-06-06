@@ -12,7 +12,7 @@
 
 ## 👨‍💻 برنامه‌نویس و توسعه‌دهنده
 **کامیار اسدی (Kamyar Asadi)**
-- [GitHub Profile]([(https://github.com/kamyarasad)])
+- [GitHub Profile](https://github.com/kamyarasad)
 
 ---
 
