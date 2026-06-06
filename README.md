@@ -13,7 +13,6 @@
 ## 👨‍💻 برنامه‌نویس و توسعه‌دهنده
 **کامیار اسدی (Kamyar Asadi)**
 - [GitHub Profile](https://github.com/YourGitHubUsername) *(آدرس گیت‌هاب خود را اینجا قرار دهید)*
-- [LinkedIn Profile](https://linkedin.com/in/YourLinkedInProfile) *(لینک لینکدین خود را اینجا قرار دهید)*
 
 ---
 
